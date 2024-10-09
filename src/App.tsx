@@ -1,11 +1,14 @@
+// src/App.tsx
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setRecipients } from './store/recipientsSlice';
 import RecipientsDisplay from './components/RecipientsDisplay';
-import './index.css'
+import './index.css';
+import { AppDispatch } from './store/store'; // Import AppDispatch type
 
-const App = () => {
-  const dispatch = useDispatch();
+const App: React.FC = () => {
+  // Use `AppDispatch` type to dispatch actions
+  const dispatch: AppDispatch = useDispatch();
 
   // Mock data with email addresses
   const mockRecipients = [
